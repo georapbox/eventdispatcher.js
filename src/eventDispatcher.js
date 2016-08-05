@@ -2,7 +2,7 @@
  * JavaScript events for custom objects
  *
  * @module eventDispatcher
- * @see original project at `https://github.com/mrdoob/eventdispatcher.js`
+ * @see original project at https://github.com/mrdoob/eventdispatcher.js
  * @example
  *
  * var car = {

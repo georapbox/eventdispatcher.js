@@ -3,7 +3,7 @@
 ## eventDispatcher
 JavaScript events for custom objects
 
-**See**: original project at `https://github.com/mrdoob/eventdispatcher.js`  
+**See**: original project at https://github.com/mrdoob/eventdispatcher.js  
 **Example**  
 ```js
 var car = {
