@@ -83,13 +83,13 @@
     addEventListener: function (type, listener) {
       var listeners;
 
-      if (this._listeners === undefined) {
+      if (typeof this._listeners === 'undefined') {
         this._listeners = {};
       }
 
       listeners = this._listeners;
 
-      if (listeners[type] === undefined) {
+      if (typeof listeners[type] === 'undefined') {
         listeners[type] = [];
       }
 
@@ -111,13 +111,13 @@
     hasEventListener: function (type, listener) {
       var listeners;
 
-      if (this._listeners === undefined) {
+      if (typeof this._listeners === 'undefined') {
         return false;
       }
 
       listeners = this._listeners;
 
-      if (listeners[type] !== undefined && listeners[type].indexOf(listener) !== - 1) {
+      if (typeof listeners[type] !== 'undefined' && listeners[type].indexOf(listener) !== - 1) {
         return true;
       }
 
@@ -135,14 +135,14 @@
     removeEventListener: function (type, listener) {
       var listeners, listenerArray, index;
 
-      if (this._listeners === undefined) {
+      if (typeof this._listeners === 'undefined') {
         return;
       }
 
       listeners = this._listeners;
       listenerArray = listeners[type];
 
-      if (listenerArray !== undefined) {
+      if (typeof listenerArray !== 'undefined') {
         index = listenerArray.indexOf(listener);
 
         if (index !== - 1) {
@@ -163,14 +163,14 @@
     dispatchEvent: function (event) {
       var listeners, listenerArray, i, length;
 
-      if (this._listeners === undefined) {
+      if (typeof this._listeners === 'undefined') {
         return;
       }
 
       listeners = this._listeners;
       listenerArray = listeners[event.type];
 
-      if (listenerArray !== undefined) {
+      if (typeof listenerArray !== 'undefined') {
         event.target = this;
 
         length = listenerArray.length;
