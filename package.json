@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "JavaScript events for custom objects",
   "scripts": {
+    "lint": "gulp lint",
     "jsdoc2md": "jsdoc2md 'src/eventDispatcher.js' > README.md"
   },
   "keywords": [],
   "author": "George Raptis <georapbox@gmail.com> (http://georap.gr)",
   "license": "(MIT)",
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-eslint": "~3.0.1",
     "jsdoc-to-markdown": "~1.3.6"
   }
 }
