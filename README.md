@@ -1,3 +1,5 @@
+[![Dependencies](https://david-dm.org/georapbox/eventdispatcher.js.svg?theme=shields.io)](https://david-dm.org/georapbox/eventdispatcher.js) [![devDependency Status](https://david-dm.org/georapbox/eventdispatcher.js/dev-status.svg)](https://david-dm.org/georapbox/eventdispatcher.js#info=devDependencies)
+
 <a name="module_eventDispatcher"></a>
 
 ## eventDispatcher
@@ -128,4 +130,3 @@ Applies the `eventDispatcher` prototype methods to the event target.
 | Param | Type | Description |
 | --- | --- | --- |
 | object | <code>Object</code> | The event target object. |
-
