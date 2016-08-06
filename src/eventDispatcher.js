@@ -1,7 +1,6 @@
 /**
- * JavaScript events for custom objects
- *
  * @module eventDispatcher
+ * @desc JavaScript events for custom objects
  * @see original project at https://github.com/mrdoob/eventdispatcher.js
  * @example
  *
