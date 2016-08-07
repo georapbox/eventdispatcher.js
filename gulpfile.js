@@ -3,6 +3,7 @@ var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var header = require('gulp-header');
 var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
 var pkg = require('./package.json');
 
 var paths = {
@@ -35,8 +36,10 @@ gulp.task('uglify', function () {
   'use strict';
 
   return gulp.src(paths.js)
+    .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(header(banner, {pkg: pkg}))
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist'));
 });
