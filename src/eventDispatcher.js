@@ -66,8 +66,12 @@
   } else {
     context[name] = definition(name, context);
   }
-}('eventDispatcher', this, function () {
+}('eventDispatcher', this, function (name) {
   'use strict';
+
+  var errors = {
+    nonExtensible: 'Cannot apply "' + name + '" on an non extensible object'
+  };
 
   /** @lends eventDispatcher */
   var eventDispatcherPrototype = {
@@ -77,10 +81,15 @@
      * @function addEventListener
      * @param {String} type A string representing the event type to listen for.
      * @param {function} listener A function to be executed when an event of the specified `type` occurs.
+     * @throws {TypeError} If the object that `eventDispatcher` is applied to is not extensible.
      * @return {Object} The `eventDispatcher` object.
      */
     addEventListener: function (type, listener) {
       var listeners;
+
+      if (!Object.isExtensible(this)) {
+        throw new TypeError(errors.nonExtensible);
+      }
 
       if (typeof this._listeners === 'undefined') {
         this._listeners = {};
@@ -190,13 +199,19 @@
        *
        * @function apply
        * @param {Object} object The event target object.
+       * @throws {TypeError} If the object that `eventDispatcher` is applied to is not extensible.
        * @return {Object} The `eventDispatcher` object.
        */
       value: function applyEventDispatcher(object) {
+        if (!Object.isExtensible(object)) {
+          throw new TypeError(errors.nonExtensible);
+        }
+
         object.addEventListener = eventDispatcherPrototype.addEventListener;
         object.hasEventListener = eventDispatcherPrototype.hasEventListener;
         object.removeEventListener = eventDispatcherPrototype.removeEventListener;
         object.dispatchEvent = eventDispatcherPrototype.dispatchEvent;
+
         return this;
       }
     }

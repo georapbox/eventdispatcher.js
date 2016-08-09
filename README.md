@@ -75,6 +75,9 @@ Registers the specified `listener` on the event target it's called on.
 
 **Kind**: inner method of <code>[eventDispatcher](#module_eventDispatcher)</code>  
 **Returns**: <code>Object</code> - The `eventDispatcher` object.  
+**Throws**:
+
+- <code>TypeError</code> If the object that `eventDispatcher` is applied to is not extensible.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -126,6 +129,9 @@ Applies the `eventDispatcher` prototype methods to the event target.
 
 **Kind**: inner method of <code>[eventDispatcher](#module_eventDispatcher)</code>  
 **Returns**: <code>Object</code> - The `eventDispatcher` object.  
+**Throws**:
+
+- <code>TypeError</code> If the object that `eventDispatcher` is applied to is not extensible.  
 
 | Param | Type | Description |
 | --- | --- | --- |
