@@ -43,7 +43,7 @@ module.exports = function (config) {
 
     htmlReporter: {
       pageTitle: 'eventdispatcher.js',
-      subPageTitle: 'Unit Test Results',
+      subPageTitle: 'Tests Report',
       outputFile: 'test/tests.html'
     },
 
@@ -63,11 +63,9 @@ module.exports = function (config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: [
-      'PhantomJS'
-      // 'Firefox',
-      // 'Chrome'
-      // 'IE7',
-      // 'IE8',
+      'PhantomJS',
+      'Firefox',
+      'Chrome'
       // 'IE9',
       // 'IE10',
       // 'IE'
@@ -81,14 +79,6 @@ module.exports = function (config) {
       IE9: {
         base: 'IE',
         'x-ua-compatible': 'IE=EmulateIE9'
-      },
-      IE8: {
-        base: 'IE',
-        'x-ua-compatible': 'IE=EmulateIE8'
-      },
-      IE7: {
-        base: 'IE',
-        'x-ua-compatible': 'IE=EmulateIE7'
       }
     },
 
