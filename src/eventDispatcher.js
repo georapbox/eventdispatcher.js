@@ -73,7 +73,6 @@
     nonExtensible: 'Cannot apply "' + name + '" on an non extensible object'
   };
 
-  /** @lends eventDispatcher */
   var eventDispatcherPrototype = {
     /**
      * Registers the specified `listener` on the event target it's called on.
