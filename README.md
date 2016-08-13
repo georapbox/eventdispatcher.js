@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/georapbox/eventdispatcher.js.svg?branch=master)](https://travis-ci.org/georapbox/eventdispatcher.js) [![Dependencies](https://david-dm.org/georapbox/eventdispatcher.js.svg?theme=shields.io)](https://david-dm.org/georapbox/eventdispatcher.js) [![devDependency Status](https://david-dm.org/georapbox/eventdispatcher.js/dev-status.svg)](https://david-dm.org/georapbox/eventdispatcher.js#info=devDependencies)
+[![Build Status](https://travis-ci.org/georapbox/eventdispatcher.js.svg?branch=master)](https://travis-ci.org/georapbox/eventdispatcher.js) [![devDependency Status](https://david-dm.org/georapbox/eventdispatcher.js/dev-status.svg)](https://david-dm.org/georapbox/eventdispatcher.js#info=devDependencies) [![Dependencies](https://david-dm.org/georapbox/eventdispatcher.js.svg?theme=shields.io)](https://david-dm.org/georapbox/eventdispatcher.js)
 
 <a name="module_eventDispatcher"></a>
 
@@ -77,7 +77,8 @@ Registers the specified `listener` on the event target it's called on.
 **Returns**: <code>Object</code> - The `eventDispatcher` object.  
 **Throws**:
 
-- <code>TypeError</code> If the object that `eventDispatcher` is applied to is not extensible.  
+- <code>TypeError</code> If the object that `eventDispatcher` is applied to is not extensible.
+
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -131,8 +132,10 @@ Applies the `eventDispatcher` prototype methods to the event target.
 **Returns**: <code>Object</code> - The `eventDispatcher` object.  
 **Throws**:
 
-- <code>TypeError</code> If the object that `eventDispatcher` is applied to is not extensible.  
+- <code>TypeError</code> If the object that `eventDispatcher` is applied to is not extensible.
+
 
 | Param | Type | Description |
 | --- | --- | --- |
 | object | <code>Object</code> | The event target object. |
+

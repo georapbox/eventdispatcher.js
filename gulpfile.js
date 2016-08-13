@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var header = require('gulp-header');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
+var fs = require('fs');
 var pkg = require('./package.json');
 
 var paths = {
@@ -42,4 +43,15 @@ gulp.task('uglify', function () {
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('writeBadges', function () {
+  'use strict';
+
+  var file = 'README.md';
+  var data = fs.readFileSync(file);
+  var badgesStr = pkg.badges.join(' ');
+  var finalStr = badgesStr + '\n\n' + data.toString();
+
+  fs.writeFileSync(file, finalStr, 'utf-8');
 });

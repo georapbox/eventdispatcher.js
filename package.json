@@ -11,14 +11,19 @@
     "test": "karma start",
     "lint": "gulp lint",
     "uglify": "gulp uglify",
-    "jsdoc2md": "jsdoc2md 'src/eventDispatcher.js' > 'README.md'"
+    "docs": "jsdoc2md 'src/eventDispatcher.js' > 'README.md' && gulp writeBadges"
   },
-  "keywords": [],
+  "keywords": ["event", "eventDispatcher"],
   "author": "George Raptis <georapbox@gmail.com> (http://georap.gr)",
   "license": "(MIT)",
   "engines": {
     "node": ">= 4.0.0"
   },
+  "badges": [
+    "[![Build Status](https://travis-ci.org/georapbox/eventdispatcher.js.svg?branch=master)](https://travis-ci.org/georapbox/eventdispatcher.js)",
+    "[![devDependency Status](https://david-dm.org/georapbox/eventdispatcher.js/dev-status.svg)](https://david-dm.org/georapbox/eventdispatcher.js#info=devDependencies)",
+    "[![Dependencies](https://david-dm.org/georapbox/eventdispatcher.js.svg?theme=shields.io)](https://david-dm.org/georapbox/eventdispatcher.js)"
+  ],
   "devDependencies": {
     "gulp": "~3.9.1",
     "gulp-eslint": "~3.0.1",
