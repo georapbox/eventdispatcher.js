@@ -47,7 +47,7 @@ Registers the specified `listener` on the event target it's called on.
 <a name="module_eventDispatcher..hasEventListener"></a>
 
 ### eventDispatcher~hasEventListener(type, listener) ⇒ <code>Boolean</code>
-Checks if the target object has a `listener` registered on for specific event `type`..
+Checks if the target object has a `listener` registered on for specific event `type`.
 
 **Kind**: inner method of <code>[eventDispatcher](#module_eventDispatcher)</code>  
 **Returns**: <code>Boolean</code> - True if target object has `listener` registered for specific event `type`; otherwise false.  
