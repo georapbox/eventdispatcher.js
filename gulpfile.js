@@ -8,7 +8,7 @@ var fs = require('fs');
 var pkg = require('./package.json');
 
 var paths = {
-  js: 'src/eventDispatcher.js'
+  js: 'src/**/*.js'
 };
 
 var banner = [
