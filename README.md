@@ -1,65 +1,24 @@
 [![Build Status](https://travis-ci.org/georapbox/eventdispatcher.js.svg?branch=master)](https://travis-ci.org/georapbox/eventdispatcher.js) [![devDependency Status](https://david-dm.org/georapbox/eventdispatcher.js/dev-status.svg)](https://david-dm.org/georapbox/eventdispatcher.js#info=devDependencies) [![Dependencies](https://david-dm.org/georapbox/eventdispatcher.js.svg?theme=shields.io)](https://david-dm.org/georapbox/eventdispatcher.js)
 
-<a name="module_eventDispatcher"></a>
+# eventDispatcher
 
-## eventDispatcher
 JavaScript events for custom objects
 
-**See**: original project at https://github.com/mrdoob/eventdispatcher.js  
-**Example**  
-```js
-var car = {
-  start: function (afterStartCallback) {
-    // Dispatch `start` event.
-    this.dispatchEvent({type: 'start', message: 'Start engines'});
-    afterStartCallback && afterStartCallback(this);
-  },
-  stop: function () {
-    // Dispatch `stop` event.
-    this.dispatchEvent({type: 'stop', message: 'Stop engines'});
-  }
-};
+## Install
 
-function startEngines(event) {
-  console.log(event.message);
-}
+### npm
 
-function stopEngines(event) {
-  console.log(event.message);
-}
-
-// Apply `eventDispatcher` methods to the prototype of the event target.
-eventDispatcher.apply(Object.getPrototypeOf(car));
-
-// Register event listeners to event target.
-car
-  .addEventListener('start', startEngines)
-  .addEventListener('afterStart', startEngines)
-  .addEventListener('stop', stopEngines);
-
-// `start` event fires first, then `afterStart` and finally
-// after two seconds `stop` events fires.
-
-car.start(function (self) {
-  // Dispatch `afterStart` event.
-  self.dispatchEvent({type: 'afterStart', message: 'Car has started'});
-});
-
-console.log(car.hasEventListener('start', startEngines));      // -> true
-console.log(car.hasEventListener('afterStart', startEngines)); // -> true
-console.log(car.hasEventListener('stop', startEngines));       // -> false
-console.log(car.hasEventListener('stop', stopEngines));        // -> true
-
-setTimeout(function () {
-  car.stop();
-
-  // Remove all event listeners from event target.
-  car
-    .removeEventListener('start', startEngines)
-    .removeEventListener('afterStart', startEngines)
-    .removeEventListener('stop', stopEngines);
-}, 2000);
+```bash
+$ npm install gr-event-dispatcher
 ```
+
+### Browser
+
+```html
+<script src="node_modules/dist/eventDispatcher.js"></script>
+```
+
+## API
 
 * [eventDispatcher](#module_eventDispatcher)
     * [~addEventListener(type, listener)](#module_eventDispatcher..addEventListener) ⇒ <code>Object</code>
@@ -139,3 +98,59 @@ Applies the `eventDispatcher` prototype methods to the event target.
 | --- | --- | --- |
 | object | <code>Object</code> | The event target object. |
 
+
+## Example
+
+```js
+var car = {
+  start: function (afterStartCallback) {
+    // Dispatch `start` event.
+    this.dispatchEvent({type: 'start', message: 'Start engines'});
+    afterStartCallback && afterStartCallback(this);
+  },
+  stop: function () {
+    // Dispatch `stop` event.
+    this.dispatchEvent({type: 'stop', message: 'Stop engines'});
+  }
+};
+
+function startEngines(event) {
+  console.log(event.message);
+}
+
+function stopEngines(event) {
+  console.log(event.message);
+}
+
+// Apply `eventDispatcher` methods to the prototype of the event target.
+eventDispatcher.apply(Object.getPrototypeOf(car));
+
+// Register event listeners to event target.
+car
+  .addEventListener('start', startEngines)
+  .addEventListener('afterStart', startEngines)
+  .addEventListener('stop', stopEngines);
+
+// `start` event fires first, then `afterStart` and finally
+// after two seconds `stop` events fires.
+
+car.start(function (self) {
+  // Dispatch `afterStart` event.
+  self.dispatchEvent({type: 'afterStart', message: 'Car has started'});
+});
+
+console.log(car.hasEventListener('start', startEngines));      // -> true
+console.log(car.hasEventListener('afterStart', startEngines)); // -> true
+console.log(car.hasEventListener('stop', startEngines));       // -> false
+console.log(car.hasEventListener('stop', stopEngines));        // -> true
+
+setTimeout(function () {
+  car.stop();
+
+  // Remove all event listeners from event target.
+  car
+    .removeEventListener('start', startEngines)
+    .removeEventListener('afterStart', startEngines)
+    .removeEventListener('stop', stopEngines);
+}, 2000);
+```
