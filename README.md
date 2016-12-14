@@ -15,7 +15,7 @@ $ npm install gr-event-dispatcher
 ### Browser
 
 ```html
-<script src="node_modules/dist/eventDispatcher.js"></script>
+<script src="node_modules/dist/eventDispatcher.min.js"></script>
 ```
 
 ## API
