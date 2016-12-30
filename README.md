@@ -1,8 +1,11 @@
-[![Build Status](https://travis-ci.org/georapbox/eventdispatcher.js.svg?branch=master)](https://travis-ci.org/georapbox/eventdispatcher.js) [![devDependency Status](https://david-dm.org/georapbox/eventdispatcher.js/dev-status.svg)](https://david-dm.org/georapbox/eventdispatcher.js#info=devDependencies) [![Dependencies](https://david-dm.org/georapbox/eventdispatcher.js.svg?theme=shields.io)](https://david-dm.org/georapbox/eventdispatcher.js)
-
 # eventDispatcher
 
 JavaScript events for custom objects
+
+[![Build Status](https://travis-ci.org/georapbox/eventdispatcher.js.svg?branch=master)](https://travis-ci.org/georapbox/eventdispatcher.js)
+[![npm version](https://badge.fury.io/js/eventdispatcher.js.svg)](http://badge.fury.io/js/eventdispatcher.js)
+[![devDependency Status](https://david-dm.org/georapbox/eventdispatcher.js/dev-status.svg)](https://david-dm.org/georapbox/eventdispatcher.js#info=devDependencies)
+[![Dependencies](https://david-dm.org/georapbox/eventdispatcher.js.svg?theme=shields.io)](https://david-dm.org/georapbox/eventdispatcher.js)
 
 ## Install
 
