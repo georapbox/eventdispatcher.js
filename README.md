@@ -152,3 +152,7 @@ setTimeout(function () {
     .removeEventListener('stop', stopEngines);
 }, 2000);
 ```
+
+## License
+
+[The MIT License (MIT)](https://georapbox.mit-license.org/@2016)
